@@ -10,16 +10,13 @@ import Task.Task;
 import helpers.mining.BarType;
 
 public class Smelter extends Task {
-
-	public Smelter(AbstractScript context) {
-		super(context, "Smelter");
-	}
+	
 	public Smelter(AbstractScript context, BarType targetBar) {
 		super(context, "Smelter");
 	}
 	
 	private final Area[] SmeltingFurnaces = { new Area(3221, 3256, 3230, 3251) };
-	private BarType targetBar = BarType.bronze;
+	private BarType targetBar = BarType.none;
 
 	@Override
 	public int execute() {
@@ -61,7 +58,7 @@ public class Smelter extends Task {
 
 	@Override
 	public boolean isComplete() {
-		return !canSmelt();
+		return targetBar == BarType.none || !canSmelt();
 	}
 	
 	private boolean canSmelt() {
