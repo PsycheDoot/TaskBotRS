@@ -44,6 +44,7 @@ public class main extends AbstractScript {
 	public void onExit() {
 		// Destroy GUI elements
 		// Clean up
+		// This is an edit.
 	}
 
 	@Override
