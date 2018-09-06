@@ -15,13 +15,17 @@ public class Miner extends Task{
 	public Miner(AbstractScript context) {
 		super(context, "Miner");
 	}
-	public Miner(AbstractScript context, OreType targetOre) {
+	public Miner(AbstractScript context, OreType to) {
 		super(context, "Miner");
+		targetOre = to;
 	}
-	public Miner(AbstractScript context, OreType targetOre, int n) {
+	public Miner(AbstractScript context, OreType to, int n) {
 		super(context, "Miner");
+		targetOre = to;
+		numOres = n;
 	}
 	
+	private int numOres = 0;
 	private GameObject target = null;
 	private OreType targetOre = OreType.copper;
 	private BarType targetBar = BarType.bronze;
